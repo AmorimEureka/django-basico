@@ -5,4 +5,4 @@ def index(request):
 
 
 def contato(request):
-    return render(request,'contao.html')
+    return render(request,'contato.html')
