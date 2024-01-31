@@ -10,13 +10,14 @@
     ```
     - **Obs.:** Gosto de configurar a extensão Python para inicializar automáticamente sempre ao startar o repositório no VSCode, com a seguinte configuração:
 
-        -  <img src="C:\Users\Rafael\Downloads\projeto-django-brasico\create_enviroment.png">
+        -  ![create_enviroment](https://github.com/AmorimEureka/django-basico/assets/84082646/973a7150-4840-460d-afd2-5c1c026ef4e6)
 
-        -  <img src="C:\Users\Rafael\Downloads\projeto-django-brasico\selecao_env.png">
+        -  ![selecao_env](https://github.com/AmorimEureka/django-basico/assets/84082646/8f68d2f7-e86e-44d7-8024-ff2963ad2dd2)
 
-        -  <img src="C:\Users\Rafael\Downloads\projeto-django-brasico\selecao_ambiente_existente.png">
+        - ![selecao_ambiente_existente](https://github.com/AmorimEureka/django-basico/assets/84082646/332fa53f-58a6-4230-acb0-e1d1b1e51e22)
 
-        -  <img src="C:\Users\Rafael\Downloads\projeto-django-brasico\ok.png">
+        -  ![ok](https://github.com/AmorimEureka/django-basico/assets/84082646/75a5acb6-01e2-43d0-a542-271fac2a371c)
+
 
     - Na sequência o primeiro commit do arquivo README
         ```sh
