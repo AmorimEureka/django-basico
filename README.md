@@ -25,3 +25,4 @@
 
         git commit -m "feat:Primeiro commit"
         ```
+3. Criando o arquivo .gitignore específico para Django
