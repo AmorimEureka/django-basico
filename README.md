@@ -22,5 +22,5 @@
         ```sh
         git add README.md
 
-        git commit -m "feat:Primeito commit"
+        git commit -m "feat:Primeiro commit"
         ```
