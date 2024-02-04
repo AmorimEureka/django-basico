@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index html</title>
+    <title>Produtos</title>
 </head>
 <body>
-    <h1>{{ logado }}</h1>
+    <h1>Produto</h1>
 
     <table>
-        
         <thead>
             <tr>
                 <th>Produto</th>
@@ -17,17 +16,13 @@
                 <th>Estoque</th>
             </tr>
         </thead>
-
         <tbody>
-        {% for produto in produtos %}
             <tr>
-                <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                <td><a href="{% url 'index' %}">{{produto.nome}}</a></td>
                 <td>{{produto.preco}}</td>
                 <td>{{produto.estoque}}</td>
             </tr>
-        {% endfor %}
         </tbody>
-
     </table>
 
 </body>
