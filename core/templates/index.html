@@ -7,35 +7,37 @@
     <title>Index html</title>
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
+
 <body>
-    <h1>{{ logado }}</h1>
+    <center>
+        <h1>{{ logado }}</h1>
 
-    <img src="{% static 'images/django.png' %}" alt="">
+        <img src="{% static 'images/django.png' %}" alt="">
 
-    <table>
-        
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>Estoque</th>
-            </tr>
-        </thead>
+        <table>
+            
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
 
-        <tbody>
-        {% for produto in produtos %}
-            <tr>
-                <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
-                <td>{{produto.preco}}</td>
-                <td>{{produto.estoque}}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
+            <tbody>
+            {% for produto in produtos %}
+                <tr>
+                    <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                    <td>{{produto.preco}}</td>
+                    <td>{{produto.estoque}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
 
-    </table>
+        </table>
 
-    <button onclick="teste();">Clique Aqui</button>
-
+        <button onclick="teste();">Clique Aqui</button>
+    </center>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
 </body>
