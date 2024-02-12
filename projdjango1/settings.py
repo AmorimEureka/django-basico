@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import os
-# from pathlib import Path
+# import os
+from pathlib import Path, os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # Path(__file__).resolve().parent.parent
@@ -20,10 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # Path(__
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nv2p)=#$@ez230oyz0gsk0+)%g+moa^jx#)2^28$apk33-*+13'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.getenv('DEBUG',0)))
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleWare'
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,8 +79,13 @@ WSGI_APPLICATION = 'projdjango1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'DATABASE_URL': os.getenv('DATABASE_URL'),
+        # 'ENGINE': os.getenv('DB_ENGINE'),
+        # 'NAME': os.getenv('POSTGRES_DB'),
+        # 'USER': os.getenv('POSTGRES_USER'),
+        # 'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        # 'HOST': os.getenv('POSTGRES_HOST'),
+        # 'PORT': os.getenv('postgres_port'),
     }
 }
 
@@ -110,7 +118,7 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
