@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 # import os
 from pathlib import Path, os
-from dotenv import load_dotenv
+import dj_database_url
+# from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,15 +79,16 @@ WSGI_APPLICATION = 'projdjango1.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'DATABASE_URL': os.getenv('DATABASE_URL'),
-        # 'ENGINE': os.getenv('DB_ENGINE'),
-        # 'NAME': os.getenv('POSTGRES_DB'),
-        # 'USER': os.getenv('POSTGRES_USER'),
-        # 'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        # 'HOST': os.getenv('POSTGRES_HOST'),
-        # 'PORT': os.getenv('postgres_port'),
-    }
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600),
+    # 'default': {
+    #     'DATABASE_URL': os.getenv('DATABASE_URL'),
+    #     'ENGINE': os.getenv('DB_ENGINE'),
+    #     'NAME': os.getenv('POSTGRES_DB'),
+    #     'USER': os.getenv('POSTGRES_USER'),
+    #     'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+    #     'HOST': os.getenv('POSTGRES_HOST'),
+    #     'PORT': os.getenv('postgres_port'),
+    # }
 }
 
 
