@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False # bool(int(os.getenv('DEBUG',0)))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://django-basico-production.up.railway.app']
 
 
 # Application definition
